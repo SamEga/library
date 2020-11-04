@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./src/styles/styles.css" />
+    <title>Справочник</title>
+  </head>
+  <body>
+    <h1>Справочник</h1>
+    <button class="btn btn-primary" onclick="saveDataInFile()">Сохранить документ</button>
+
+    <form class="form" id="book-form">
+      <div class="form-group col-md-3">
+        <label for="publishing">Издательство:</label>
+        <input type="text" class="form-control" id="publishing" />
+      </div>
+      <div class="form-group col-md-3">
+        <label for="book-title">Название книги:</label>
+        <input type="text" class="form-control" id="book-title" />
+      </div>
+      <div class="form-group col-md-3">
+        <label for="author">Жанр:</label>
+        <input type="text" class="form-control" id="genre" />
+      </div>
+      <div class="form-group col-md-3">
+        <label for="book-year">Год:</label>
+        <input type="date" class="form-control" id="book-year" />
+      </div>
+    </form>
+
+    <button class="btn btn-success" onclick="submitForm()">Добавить</button>
+    <button class="btn btn-outline-info" onclick="editItem()">Редактировать</button>
+    <button class="btn btn-outline-danger" onclick="deleteItem()">Удалить</button>
+    
+
+    <main>
+      <table class="table table-striped" aria-describedby="books">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Издательство</th>
+            <th scope="col">Название книги</th>
+            <th scope="col">Жанр</th>
+            <th scope="col">Год</th>
+          </tr>
+        </thead>
+        <tbody id="booklist"></tbody>
+      </table>
+    </main>
+    <script src="./src/core.js"></script>
+  </body>
+</html>
